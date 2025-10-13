@@ -1,1 +1,0 @@
-# CDC.md — à compléter (voir triptyque).

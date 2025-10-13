@@ -1,1 +1,0 @@
-# Spec_ecran.md — à compléter (voir triptyque).
