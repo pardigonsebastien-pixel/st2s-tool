@@ -38,14 +38,14 @@ La page Paramètres permet de configurer les données de base de l'application S
 #### Format `classes.csv`
 ```csv
 code;label;groupes
-1reA;Première A;A|B
-TleA;Terminale A;A|B|C
+1reA;Première A;A;B
+TleA;Terminale A;A;B;C
 ```
 
 **Champs:**
 - `code` : Code unique de la classe (ex: 1reA)
 - `label` : Nom complet de la classe
-- `groupes` : Groupes séparés par `|`
+- `groupes` : Groupes séparés par `;`
 
 #### Format `eleves/<code>.csv`
 ```csv
