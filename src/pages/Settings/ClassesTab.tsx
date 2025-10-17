@@ -53,6 +53,37 @@ export function ClassesTab() {
     setClasses(updated);
   };
 
+  const getGroupSchemaFromValue = (groupes: string): string => {
+    if (!groupes || groupes === '') return 'none';
+    if (groupes === 'A;B') return 'ab';
+    if (groupes === 'A;B;C') return 'abc';
+    if (groupes === '1;2') return '12';
+    if (groupes === '1;2;3') return '123';
+    return 'custom';
+  };
+
+  const getValueFromGroupSchema = (schema: string): string => {
+    switch (schema) {
+      case 'none': return '';
+      case 'ab': return 'A;B';
+      case 'abc': return 'A;B;C';
+      case '12': return '1;2';
+      case '123': return '1;2;3';
+      default: return '';
+    }
+  };
+
+  const handleGroupSchemaChange = (index: number, schema: string) => {
+    if (schema !== 'custom') {
+      handleEdit(index, 'groupes', getValueFromGroupSchema(schema));
+    }
+  };
+
+  const handleCustomGroupChange = (index: number, value: string) => {
+    const normalized = value.split(';').map(g => g.trim()).filter(g => g).join(';');
+    handleEdit(index, 'groupes', normalized);
+  };
+
   const handleAdd = () => {
     setClasses([...classes, { code: '', label: '', groupes: '' }]);
   };
@@ -141,7 +172,7 @@ export function ClassesTab() {
               <tr>
                 <th>Code</th>
                 <th>Libellé</th>
-                <th>Groupes (séparés par un point-virgule, ex : A;B;C)</th>
+                <th>Groupes — choisissez un schéma ou 'Personnalisé…' (séparer par ';')</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -165,12 +196,29 @@ export function ClassesTab() {
                     />
                   </td>
                   <td>
-                    <input
-                      type="text"
-                      value={classe.groupes}
-                      onChange={(e) => handleEdit(index, 'groupes', e.target.value)}
-                      placeholder="ex : A;B;C"
-                    />
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      <select
+                        value={getGroupSchemaFromValue(classe.groupes)}
+                        onChange={(e) => handleGroupSchemaChange(index, e.target.value)}
+                        style={{ width: '100%' }}
+                      >
+                        <option value="none">Aucun groupe</option>
+                        <option value="ab">A / B</option>
+                        <option value="abc">A / B / C</option>
+                        <option value="12">1 / 2</option>
+                        <option value="123">1 / 2 / 3</option>
+                        <option value="custom">Personnalisé…</option>
+                      </select>
+                      {getGroupSchemaFromValue(classe.groupes) === 'custom' && (
+                        <input
+                          type="text"
+                          value={classe.groupes}
+                          onChange={(e) => handleCustomGroupChange(index, e.target.value)}
+                          placeholder="ex : A;B;C ou 1;2"
+                          style={{ width: '100%', fontSize: '13px' }}
+                        />
+                      )}
+                    </div>
                   </td>
                   <td>
                     <button
