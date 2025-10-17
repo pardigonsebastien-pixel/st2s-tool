@@ -141,7 +141,7 @@ export function ClassesTab() {
               <tr>
                 <th>Code</th>
                 <th>Libellé</th>
-                <th>Groupes (séparés par ;)</th>
+                <th>Groupes (séparés par un point-virgule, ex : A;B;C)</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -169,7 +169,7 @@ export function ClassesTab() {
                       type="text"
                       value={classe.groupes}
                       onChange={(e) => handleEdit(index, 'groupes', e.target.value)}
-                      placeholder="A;B;C"
+                      placeholder="ex : A;B;C"
                     />
                   </td>
                   <td>
