@@ -1,0 +1,30 @@
+.tabs-container {
+  margin-bottom: var(--spacing-lg);
+}
+
+.tabs-list {
+  display: flex;
+  gap: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0;
+}
+
+.tab-button {
+  background: transparent;
+  color: var(--color-text-secondary);
+  padding: 12px 20px;
+  font-weight: 500;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  color: var(--color-text-primary);
+}
+
+.tab-button.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}

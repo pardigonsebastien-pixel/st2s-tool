@@ -1,14 +1,41 @@
 # ST2S Tool — Dépôt source
 
-Ce dépôt est la **source de vérité** du projet (code + documents).  
+Ce dépôt est la **source de vérité** du projet (code + documents).
 On travaille **en branches** et on fusionne via **Pull Requests** (PR).
 
 ## Arborescence
-- `app/` – code de l’application (frontend PWA + plus tard backend si besoin)
-- `data/` – données de test (CSV anonymisés)
+- `src/` – code source de l'application (React + TypeScript)
+- `data/` – données locales (CSV avec séparateur point-virgule, UTF-8 BOM)
 - `docs/` – **triptyque** (CDC.md, Spec_ecran.md, Changelog.md)
-- `tests/` – tests unitaires/visuels (optionnel)
 - `.github/` – modèles de PR, issues, règles
+
+## Installation et démarrage
+
+### Prérequis
+- Node.js (version 18 ou supérieure)
+- npm
+
+### Démarrage rapide
+
+**Windows:**
+```bash
+run.bat
+```
+
+**Linux/Mac:**
+```bash
+npm install
+npm run dev
+```
+
+L'application sera accessible à l'adresse : http://localhost:3000
+
+### Build de production
+```bash
+npm run build
+```
+
+Les fichiers de production seront générés dans le dossier `dist/`.
 
 ## Branches
 - `main` — **protégée** (pas d’écriture directe)  

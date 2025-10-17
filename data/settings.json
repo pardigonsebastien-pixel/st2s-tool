@@ -1,0 +1,7 @@
+{
+  "retards": {
+    "palier_minutes": [5, 15, 30],
+    "penalites": [1, 2, 3],
+    "justifie_vs": true
+  }
+}

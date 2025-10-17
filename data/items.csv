@@ -1,0 +1,6 @@
+id;label;enabled
+item_001;Retard;true
+item_002;Matériel oublié;true
+item_003;Travail non rendu;true
+item_004;Comportement inapproprié;false
+item_005;Absence de justificatif;true

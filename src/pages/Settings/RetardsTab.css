@@ -1,0 +1,135 @@
+.retards-tab {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.retards-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.paliers-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.palier-row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: #F9FAFB;
+  border-radius: var(--radius-input);
+}
+
+.palier-inputs {
+  display: flex;
+  gap: var(--spacing-md);
+  flex: 1;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+}
+
+.input-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.input-with-unit {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.input-with-unit input {
+  flex: 1;
+}
+
+.unit {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.checkbox-full {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  cursor: pointer;
+  padding: var(--spacing-md);
+  background: #F9FAFB;
+  border-radius: var(--radius-input);
+  position: relative;
+}
+
+.checkbox-full input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-label-text {
+  font-size: 15px;
+  color: var(--color-text-primary);
+}
+
+.info-card {
+  background: #F0F9FF;
+  border: 1px solid #BAE6FD;
+}
+
+.example-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.example-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: white;
+  border-radius: var(--radius-input);
+}
+
+.example-time {
+  font-weight: 600;
+  color: var(--color-secondary);
+  min-width: 60px;
+}
+
+.example-arrow {
+  color: var(--color-text-secondary);
+}
+
+.example-penalty {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .palier-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .palier-inputs {
+    flex-direction: column;
+  }
+}

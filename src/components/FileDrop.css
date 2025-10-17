@@ -1,0 +1,41 @@
+.file-drop {
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-card);
+  padding: var(--spacing-xl);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: var(--color-bg-card);
+}
+
+.file-drop:hover {
+  border-color: var(--color-primary);
+  background: #FFF5F0;
+}
+
+.file-drop.dragging {
+  border-color: var(--color-primary);
+  background: #FFF5F0;
+  transform: scale(1.02);
+}
+
+.file-drop svg {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.file-drop:hover svg,
+.file-drop.dragging svg {
+  color: var(--color-primary);
+}
+
+.file-drop-label {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.file-drop-hint {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
